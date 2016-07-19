@@ -3,6 +3,8 @@
 ;;;;
 
 ;; Define package repositories
+
+
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -66,7 +68,11 @@
     tagedit
 
     ;; git integration
-    magit))
+    magit
+
+    ;; My
+    clojurescript-mode
+    evil))
 
 ;; On OS X, an Emacs instance started from the graphical user
 ;; interface will have a different environment than a shell in a
@@ -130,3 +136,9 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+
+;; My custom 
+(define-key key-translation-map [?\C-x] [?\C-u])
+(define-key key-translation-map [?\C-u] [?\C-x])
+(define-key key-translation-map [?\M-x] [?\M-u])
+(define-key key-translation-map [?\M-u] [?\M-x])
